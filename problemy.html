@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <title>Chad's Guide to start using Linux-Install</title>
+        <meta charset="utf-8"/>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+<body>
+<ul id="tagcloud">
+    <li><a href="zaciatok.html">Inštalácia</a></li>
+    <li><a href="problemy.html">Problémy</a></li>
+    <li><a href="instalacia.html">Sťahovanie aplikácií</a></li>
+    <li><a href="index.html">O nás</a></li>
+
+    </ul>
+
+
+
+ <header><h1>Riesenie problemov</h1></header>
+    <main>
+<p>Linux je síce veľmi stabilný system, ale to neznamená že je bezchybný. Čas od času sa môže stať že aktualizácia niečo pokazí. V tejto sekcii si taktiež povieme zopár užitočných typov.</p>
+<h3>Nefunkčná WiFi</h3>
+    
+<p>Ak ste aktualizovali váš kernel, a po opätovnom zapnutí wifi nefunguje, spravte toto:</p>
+<ol>
+    <li> Reštartujte svoj PC a počas zapínania držte <code>[Shift]</code></li>
+    <li> Menu zobrazujúce pokročile nastavenia sa zobrazí</li>
+    <li> Kliknite naň, a zvolte staršiu verziu kernelu. (Kernel je jadro linuxu)</li>
+</ol>
+
+<h3>Torrentový klient nechce otvárať magnet linky</h3>
+
+
+
+<p>Ak sa stretnete s iným problémom, určite navštívte  <a href="https://forums.linuxmint.com">oficiálne fórum linuxu mint.</a>
+<ol>
+    <li>Vstúpime do /usr/share/applications</li>
+    <li>Vyhľadáme našu aplíkáciu (Napríklad QBittorent) </li>
+   <li> Skopírujte meno súboru spoločne s .desktop</li>
+   <li> Napíšte do terminálu <code> gio mime x-scheme-handler/magnet skopírované_meno </code></li>
+</ol>
+
+<h3>Zmena hesla</h3>
+<p>Väčšina grafických prostredí ponúka menu v nastaveniach pre zmenu hesla, pri niektorých je to však treba urobiť manuálne. (Napríklad pri XFCE.)</p>
+<ol>
+    <li> Napíšte do terminálu <code>passwd</code></li>
+    <li> Zadajte staré heslo, následované novým</li>
+</ol>
+
+<h3>Nepáči sa vám rozloženie vašej plochy?</h3>
+<p>Nevadí, XFCE ponúka jednoduchý program pre rýchlu zmenu rozloženia panelov, vďaka ktorej vaša plocha môže vyzerať ako Windows, alebo Mac.</p>
+
+<ol>
+    <li>Nainštalujeme aplikáciu xfce4-panel-profiles</li>
+    <li>Spustíme ju, a zálohujeme si našu súčasnú konfiguráciu pomocou "Save configuration"</li>
+    <li>Vyberieme si z jednej s prednastavených konfigurácií a stlačíme "apply configuration"</li>
+   
+</ol>
+<img src="images/panels.png" 
+     width="auto"
+     height="300"/>
+
+<h3> Neviem nájsť config súbory</h3>
+<ol>
+<li>Otvorte správcu súboroch, a aktivujte vyditelnosť skrytých súborov (View > Show Hidden Files)</li>
+<li>Config súbory sú vždy uložené v <code>/home/[vaše meno]/.config/</code> alebo priamo v <code>/home/[vaše meno]</code></li>
+</ol>
+
+<p>Config súbory môžu byť prenášané medzi počítačmi, aj tými s inou linux distribúciou.</p>
+
+<h3>Chcem pridať .AppImage do menu s ostatnými aplikáciamy</h3>
+<ol>
+    <li>Prejdite do zložky s .AppImage súborom</li>
+    <li>Skopírujte presný názov a cestu k súboru</li>
+    <li>Otvorte /usr/share/applications ako root</li>
+    <li>Pridajte súbor s názvom <meno vašej aplikácie>.desktop</li>
+    <li>Do súboru zadajte: 
+
+<code><p>[Desktop Entry]</p>
+<p>Name=Freetube</p>
+<p>Exec=/home/tsugu/Apps/freetube.AppImage</p>
+<p>Icon=/home/tsugu/Pictures/icons/freetube.png</p>
+<p>Type=Application</p>
+<p>Encoding=UTF-8</p>
+<p>Categories=AudioVideo;</p>
+<p>Terminal=false</p></code>
+    <li>Súbor uložte</li>
+</ol>
+
+<hr>
+<p><strong>Ak sa stretnete s iným problémom, určite navštívte  <a href="https://forums.linuxmint.com">oficiálne fórum linuxu mint.</a>
+ Pre viac tipov navštívte <a href="https://easylinuxtipsproject.blogspot.com/p/1.html">túto stránku</strong></p>
+
+
+</body>
+</html>
