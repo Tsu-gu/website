@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <title>Chad's Guide to start using Linux-Install</title>
+        <meta charset="utf-8"/>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+<body>
+<ul id="tagcloud">
+    <li><a href="zaciatok.html">Inštalácia</a></li>
+    <li><a href="problemy.html">Problémy</a></li>
+    <li><a href="instalacia.html">Sťahovanie aplikácií</a></li>
+    <li><a href="index.html">O nás</a></li>
+</ul>
+
+
+<header><h1>Spôsoby instalovania softvéru</h1></header>
+    <main>
+    <p>Pri Windows sme zviknutý inštalovať aplikácie pomocou .exe súborov. Na linuxe máme však mnoho násobne viac možností.</p>
+
+<h3>Appstore</h3>
+<ol>
+<li>Otvorte váš obchod s aplikáciami.(Software Manager/Pop Shop)</li>
+<li>Vyhľadajte aplikaciu ktorú potrebujete, a stlačte inštalovať</li>
+</ol>
+
+<img src="images/store.png" 
+     width="auto"
+     height="375"/>
+
+<h3>Terminál</h3>
+Táto metóda je veľmi podobná, s tým rozdielom že s obchodom komunikujeme priamo. Výhodou je možnosť inštalácie niekoľkých aplikácií naraz.
+<ol>
+ <li>Vyhladame aplikaciu pomocou <code>.sudo apt search <aplikacia ktoru hladate></code></li>
+<li> Ukaže sa vam list dostupnych aplikacii</li>
+<li>Napíšte <code>.sudo apt install meno_aplikacie_z_listu</code>.</li>
+</ol>
+<img src="images/terminal.png" 
+     width="auto"
+     height="375"/>
+
+<h3>PPA</h3>
+PPA je skratka pre Personal Package Archive. Ak inštalujete aplikácie prostredníctvom oficiálneho obchodu s aplikáciami alebo príkazu apt, súbory sú umiestnené na oficiálnych serveroch. Niektoré aplikácie však používajú vlastné repozitáre. Používanie tejto metódy sa líši od aplikácie k aplikácii, a funguje iba na systémoch založených na Ubuntu. (Napríklad Linux Mint a Pop!_OS)
+<p>Príklad: <strong>Inštalácia Qbittorent</strong></p>
+<ol>
+    <li><p><code>sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable</code>. (povie systému, aby pridal toto konkrétne PPA)</p></li>
+    <li><p><code>sudo apt-update</code>. (spôsobí, že systém skontroluje svoje repositories a aktualizuje ich)</p></li> 
+    <li><p><code>sudo apt install qbittorrent</code>. (nainštaluje uvedenú aplikáciu)</p></li>
+</ol>
+
+<h3>Appimage</h3>
+Pravdepodobne najjednoduchší spôsob inštalácie aplikácií.
+<ol>
+<li>Prejdete na webovú stránku aplikácie, ktorú chcete stiahnuť.</li> 
+<li>Stiahnete si .appimage súbor.</li>
+<li>Po jeho stiahnutí ho urobíte spustiteľným (kliknete pravým tlačidlom myši na súbor>vlastnosti>oprávnenia>spraviť spustiteľný)</li>
+<li>Spustíte súbor. </li>
+Touto metódou sa aplikácia nenainštaluje do systému, takže ju môžete kedykoľvek odstrániť odstránením samotneho súboru
+</ol>
+
+<h3>.Deb súbory</h3>
+Ekvivalent .exe súborov. Niektoré aplikácie dokonca pridajú svoj vlastný repozitár, s ktorého sa budú sťahovať budúce updaty.
+<ol> 
+    <li>Stiahnite .deb subor</li>
+    <li>Stlačte inštalovať</li>
+</ol>
+
+<h3>Flatpak</h3>
+Novodobý spôsob inštalácia aplikácií. Nevýhoda tohoto systému je veľkosť aplikácii, ktoré sa ľahko môžu vyšplhať na 2GB. Odporúčaná ako posledná možnosť získavania aplikácií
+<ol> 
+<li>Otvorte sekciu vašeho obchodu pomenovanú Flatpak</li>
+<li>vyhľadajte aplikáciu </li>
+<li>Kliknite na stiahnuť</li>
+</ol>
+<p>Flatpaky sa taktiež dajú nainštalovať cez terminálové príkazy</p>
+
+
+<h1>Spôsoby odinštalovania softvéru</h1>
+
+<ul>
+<li>napíšte do terminálu <code>.sudo apt-get remove meno_aplikacie</code>.</li>
+<li>Prejdite do sekcie vášho obchodu nazvanú "nainštalovane aplikacie" a, stlačte odinštalovať pri tej ktorú už nepotrebujete</li>
+<li>V prípade flatpaku: <code>flatpak uninstall --help</code>.</li>
+</ul>
+
+<p>Práve sme si prešli všemožné spôsoby inštalácie programov. Existuje ich viac, ale toto sú tie najbežnejšie s ktorými sa budete stretávať najviac. Ak vašu aplikáciu nedokážeťe nájsť a nainštalovať žiadnym s týchto spôsobov, internet je váš priaťel ktorý vám vždy rád poradí.</p>   
+     
+</body>
+</html>
